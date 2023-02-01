@@ -39,10 +39,10 @@ La solución del ejercicio completo se subirá al final del módulo, si en una s
 #### 2.1 Intro a la programación:
 
 - [x] 1. Crea el proyecto
-- [ ] 2. Entiende el código html y css del proyecto
-- [ ] 3. **FORMULARIO:** Mostrar
+- [x] 2. Entiende el código html y css del proyecto
+- [x] 3. **FORMULARIO:** Mostrar
      formulario
-- [ ] 4. **LISTADO:** Listado: Mostrar gatitos desde JS
+- [x] 4. **LISTADO:** Listado: Mostrar gatitos desde JS
 
 #### 2.2 Intro a la programación 2:
 
