@@ -95,9 +95,13 @@ buttonAdd.addEventListener('click', (event) =>{
 })
 
 const buttonCancel = document.querySelector('.js-btn-cancel');
+const inputRace = document.querySelector('.js-input-race');
 
 buttonCancel.addEventListener('click', (event) => {
     event.preventDefault();
-   
+    inputPhoto.value = '';
+    inputName.value = '';
+    inputRace.value = '';
+    inputDesc.value = '';
     form.classList.add('collapsed');
 })
