@@ -59,3 +59,35 @@ if(kittenOneDesc.includes(descrSearchText)){
     articleTwo.classList.add('remove');
     articleThree.classList.add('remove');
 }
+
+
+const buttonPlusCircle = document.querySelector('.item');
+const form = document.querySelector('.js-new-form')
+
+buttonPlusCircle.addEventListener('click', (event) => {
+    event.preventDefault();
+    form.classList.toggle('collapsed')
+})
+
+const buttonAdd = document.querySelector('.js-btn-add');
+
+
+
+buttonAdd.addEventListener('click', (event) =>{
+    event.preventDefault();
+    const inputDesc = document.querySelector('.js-input-desc');
+    const inputPhoto = document.querySelector('.js-input-photo');
+    const inputName = document.querySelector('.js-input-name');
+    const labelMessageError = document.querySelector('.js-label-error');
+    const valueDesc = inputDesc.value;
+    const valuePhoto = inputPhoto.value;
+    const valueName = inputName.value;
+
+    console.log(valueDesc,valuePhoto,valueName);
+
+    if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+        labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo"
+    } else {
+        labelMessageError.innerHTML = "Todo ok"
+    }
+})
