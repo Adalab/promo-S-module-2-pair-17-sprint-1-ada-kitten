@@ -56,11 +56,11 @@ const filterKitten = (event) => {
   const descrSearchText = input_search_desc.value;
   if (kittenOneDesc.includes(descrSearchText)) {
     formList.innerHTML = kittenOne;
-    paragraph.innerHTML = `Tu gato es el 1`;
-  } else if (kittenTwoDesc.includes(descrSearchText)) {
+    paragraph.innerHTML = `Tu gato es el 1`;}
+  if (kittenTwoDesc.includes(descrSearchText)) {
     formList.innerHTML = kittenTwo;
-     paragraph.innerHTML = 'Tu gato es el 2';
-  } else if (kittenThreeDesc.includes(descrSearchText)) {
+     paragraph.innerHTML = 'Tu gato es el 2';}
+  if (kittenThreeDesc.includes(descrSearchText)) {
     formList.innerHTML = kittenThree;
     paragraph.innerHTML = 'Tu gato es el 3';
   }
