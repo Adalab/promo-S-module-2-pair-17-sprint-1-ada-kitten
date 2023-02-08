@@ -6,28 +6,28 @@
 
 const formList = document.querySelector('.js-list');
 
-// const kittenOneImg='https://dev.adalab.es/gato-siames.webp';
-// const kittenOneName='Anastacio';
-// const kittenOneDesc='Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
-// const kittenOneRace='Siamés';
+const kittenOneImg='https://dev.adalab.es/gato-siames.webp';
+const kittenOneName='Anastacio';
+const kittenOneDesc='Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
+const kittenOneRace='Siamés';
 
-// const kittenOne=`<li class="card"><article class="js-article-1"><img class="card_img"src="${kittenOneImg}" alt="siames-cat"/><h3 class="card_title">${kittenOneName.toUpperCase()}</h3><h4 class="card_race">${kittenOneRace}</h4><p class="card_description">${kittenOneDesc}</p></article></li>`
+const kittenOne=`<li class="card"><article class="js-article-1"><img class="card_img"src="${kittenOneImg}" alt="siames-cat"/><h3 class="card_title">${kittenOneName.toUpperCase()}</h3><h4 class="card_race">${kittenOneRace}</h4><p class="card_description">${kittenOneDesc}</p></article></li>`
 
-// const kittenTwoImg="https://dev.adalab.es/sphynx-gato.webp";
-// const kittenTwoName="Fiona";
-// const kittenTwoRace="Sphynx";
-// const kittenTwoDesc="Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza  gatuna que se caracteriza por la «ausencia» de pelo.";
+const kittenTwoImg="https://dev.adalab.es/sphynx-gato.webp";
+const kittenTwoName="Fiona";
+const kittenTwoRace="Sphynx";
+const kittenTwoDesc="Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza  gatuna que se caracteriza por la «ausencia» de pelo.";
 
-// const kittenTwo = `<li class="card"><article class="js-article-2"><img    class="card_img"src="${kittenTwoImg}" alt="siames-cat"/><h3 class="card_title">${kittenTwoName.toUpperCase()}</h3><h4 class="card_race">${kittenTwoRace}</h4><p class="card_description">${kittenTwoDesc}</p></article></li>`;
+const kittenTwo = `<li class="card"><article class="js-article-2"><img    class="card_img"src="${kittenTwoImg}" alt="siames-cat"/><h3 class="card_title">${kittenTwoName.toUpperCase()}</h3><h4 class="card_race">${kittenTwoRace}</h4><p class="card_description">${kittenTwoDesc}</p></article></li>`;
 
-// const kittenThreeImg="https://dev.adalab.es/maine-coon-cat.webp";
-// const kittenThreeName="Cielo";
-// const kittenThreeRace="Maine Coon";
-// const kittenThreeDesc="Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
+const kittenThreeImg="https://dev.adalab.es/maine-coon-cat.webp";
+const kittenThreeName="Cielo";
+const kittenThreeRace="Maine Coon";
+const kittenThreeDesc="Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
 
-// const kittenThree = `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenThreeImg}" alt="siames-cat"/><h3 class="card_title">${kittenThreeName.toUpperCase()}</h3><h4 class="card_race">${kittenThreeRace}</h4><p class="card_description">${kittenThreeDesc}</p></article></li>`;
+const kittenThree = `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenThreeImg}" alt="siames-cat"/><h3 class="card_title">${kittenThreeName.toUpperCase()}</h3><h4 class="card_race">${kittenThreeRace}</h4><p class="card_description">${kittenThreeDesc}</p></article></li>`;
 
-// formList.innerHTML = kittenOne + kittenTwo + kittenThree;
+//formList.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 function renderKitten(url,desc,name,race){
     const kittenImg = url;
@@ -37,14 +37,6 @@ function renderKitten(url,desc,name,race){
     formList.innerHTML += `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenImg}" alt="siames-cat"/><h3 class="card_title">${kittenName.toUpperCase()}</h3><h4 class="card_race">${kittenRace}</h4><p class="card_description">${kittenDesc}</p></article></li>`;
 }
 
-
-
-
-
-
-
-
-
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const paragraph = document.querySelector('.js-paragraph');
 
@@ -53,9 +45,28 @@ const articleTwo = document.querySelector('.js-article-2');
 const articleThree = document.querySelector('.js-article-3');
 
 
-const descrSearchText = input_search_desc.value;
+
+
+const btnSearch = document.querySelector('.js-btn-search');
 
 //remove.classList.remove('remove');
+const filterKitten = (event) => {
+  event.preventDefault();
+
+  const descrSearchText = input_search_desc.value;
+  if (kittenOneDesc.includes(descrSearchText)) {
+    formList.innerHTML = kittenOne;
+    paragraph.innerHTML = `Tu gato es el 1`;
+  } else if (kittenTwoDesc.includes(descrSearchText)) {
+    formList.innerHTML = kittenTwo;
+     paragraph.innerHTML = 'Tu gato es el 2';
+  } else if (kittenThreeDesc.includes(descrSearchText)) {
+    formList.innerHTML = kittenThree;
+    paragraph.innerHTML = 'Tu gato es el 3';
+  }
+};
+
+btnSearch.addEventListener('click',filterKitten );
 
 // if(kittenOneDesc.includes(descrSearchText)){
 //     paragraph.innerHTML = `Tu gato es el 1`;
@@ -151,12 +162,9 @@ function inputClear(){
 
 const buttonCancel = document.querySelector('.js-btn-cancel');
 
-
-buttonCancel.addEventListener('click', (event) => {
-    event.preventDefault();
-    inputPhoto.value = '';
-    inputName.value = '';
-    inputRace.value = '';
-    inputDesc.value = '';
+const cancelNewKitten = (event) =>{
+   event.preventDefault();
+    inputClear();
     form.classList.add('collapsed');
-})
+}
+buttonCancel.addEventListener('click',cancelNewKitten);
