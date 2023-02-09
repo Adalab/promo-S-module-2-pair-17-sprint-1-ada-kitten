@@ -141,7 +141,6 @@ function renderKittenForm(kittenInput){
     formList.innerHTML += `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenInput.valuePhoto}" alt="siames-cat"/><h3 class="card_title">${kittenInput.valueName.toUpperCase()}</h3><h4 class="card_race">${kittenInput.valueRace}</h4><p class="card_description">${kittenInput.valueDesc}</p></article></li>`;
 };
 
-
 buttonAdd.addEventListener('click', addNewKitten);
 
 function addNewKitten(event) {
@@ -152,12 +151,19 @@ function addNewKitten(event) {
       valueDesc: inputDesc.value,
       valueRace: inputRace.value,
     };
+    //Comentar con Marina
+    // const kittenInput= kittenData_1;
+    // kittenInput.image=inputPhoto.value;
+    // kittenInput.name=inputName.value;
+    // kittenInput.desc=inputDesc.value;
+    // kittenInput.race=inputRace.value;
 
     if (kittenInput.valueDesc === '' || kittenInput.valuePhoto === '' || kittenInput.valueName === '') {
         labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
     } else {
         labelMessageError.innerHTML = "Todo ok";
         renderKittenForm(kittenInput);
+        // renderKittenSearch(kittenInput);
         inputClearForm();
     }
 
