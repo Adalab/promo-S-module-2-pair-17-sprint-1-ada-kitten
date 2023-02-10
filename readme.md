@@ -68,7 +68,7 @@ La solución del ejercicio completo se subirá al final del módulo, si en una s
 
 #### 2.6 Funciones II:
 
-- [ ] 1. **FORMULARIO:** Cancelar formulario.
+- [x] 1. **FORMULARIO:** Cancelar formulario.
 - [ ] 2. **FILTRAR:** Filtrar por descripción.
 - [ ] 3. **LISTADO - Bonus:**: ¿Y si no hay raza?.
 - [ ] 4. **BONUS:** Funciones dentro de funciones.

@@ -1,18 +1,6 @@
 'use strict';
 
-//const formHidden = document.querySelector('.js-new-form');
-//formHidden.classList.remove("collapsed");
-
-
 const formList = document.querySelector('.js-list');
-
-
-// const kittenOne=`<li class="card"><article class="js-article-1"><img class="card_img"src="${kittenOneImg}" alt="siames-cat"/><h3 class="card_title">${kittenOneName.toUpperCase()}</h3><h4 class="card_race">${kittenOneRace}</h4><p class="card_description">${kittenOneDesc}</p></article></li>`
-
-// const kittenTwo = `<li class="card"><article class="js-article-2"><img    class="card_img"src="${kittenTwoImg}" alt="siames-cat"/><h3 class="card_title">${kittenTwoName.toUpperCase()}</h3><h4 class="card_race">${kittenTwoRace}</h4><p class="card_description">${kittenTwoDesc}</p></article></li>`;
-
-// const kittenThree = `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenThreeImg}" alt="siames-cat"/><h3 class="card_title">${kittenThreeName.toUpperCase()}</h3><h4 class="card_race">${kittenThreeRace}</h4><p class="card_description">${kittenThreeDesc}</p></article></li>`;
-
 
 const kittenData_1 = {
   image: 'https://dev.adalab.es/gato-siames.webp',
@@ -35,11 +23,8 @@ const kittenData_3 = {
   race: 'Maine Coon',
 };
 
-
-
-
-
-
+const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
+console.log (kittenDataList);
 
 //formList.innerHTML = kittenOne + kittenTwo + kittenThree;
 
@@ -50,8 +35,6 @@ function renderKittenSearch(kittenData){
     const kittenRace = kittenData.race;
     formList.innerHTML += `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenImg}" alt="siames-cat"/><h3 class="card_title">${kittenName.toUpperCase()}</h3><h4 class="card_race">${kittenRace}</h4><p class="card_description">${kittenDesc}</p></article></li>`;
 };
-
-
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const paragraph = document.querySelector('.js-paragraph');
@@ -67,43 +50,36 @@ const filterKitten = (event) => {
   formList.innerHTML = "";
   const descrSearchText = input_search_desc.value;
   if (kittenData_1.desc.includes(descrSearchText)) {
-    formList.innerHTML += kittenData_1;
+    // formList.innerHTML += kittenData_1;
     renderKittenSearch(kittenData_1);
     paragraph.innerHTML = `Tu gato es el 1`;}
 
   if (kittenData_2.desc.includes(descrSearchText)) {
-    formList.innerHTML += kittenData_2;
+    // formList.innerHTML += kittenData_2;
     renderKittenSearch(kittenData_2);
      paragraph.innerHTML = 'Tu gato es el 2';}
 
   if (kittenData_3.desc.includes(descrSearchText)) {
-    formList.innerHTML += kittenData_3;
+    // formList.innerHTML += kittenData_3;
     renderKittenSearch(kittenData_3);
     paragraph.innerHTML = 'Tu gato es el 3';
   }
 };
 
+
 btnSearch.addEventListener('click',filterKitten );
 
-// if(kittenOneDesc.includes(descrSearchText)){
-//     paragraph.innerHTML = `Tu gato es el 1`;
-//     articleTwo.classList.add('remove');
-//     articleThree.classList.add('remove');
-// } else if (kittenTwoDesc.includes(descrSearchText)) {
-//     paragraph.innerHTML = 'Tu gato es el 2';
-//     articleOne.classList.add('remove');
-//     articleThree.classList.add('remove');
-// } else if (kittenThreeDesc.includes(descrSearchText)){
-//     paragraph.innerHTML = 'Tu gato es el 3';
-//     articleOne.classList.add('remove');
-//     articleTwo.classList.add('remove');
-// } else {
-//     paragraph.innerHTML ='No hay ningún gato con esa característica';
-//     articleOne.classList.add('remove');
-//     articleTwo.classList.add('remove');
-//     articleThree.classList.add('remove');
-// }
+const renderRace = (race) => {
+  if (race==="")
+  {
+    return 'Uy que despiste, no sabemos su raza';
+  }
+  else
+  {
+    return race;
+  }
 
+}
 
 const buttonPlusCircle = document.querySelector('.item');
 const form = document.querySelector('.js-new-form')
@@ -126,7 +102,6 @@ function handleClickNewCatForm(event) {
   }
 }
 
-
 const buttonAdd = document.querySelector('.js-btn-add');
 
 const inputDesc = document.querySelector('.js-input-desc');
@@ -135,11 +110,12 @@ const inputName = document.querySelector('.js-input-name');
 const inputRace = document.querySelector('.js-input-race');
 const labelMessageError = document.querySelector('.js-label-error');
 
-
 function renderKittenForm(kittenInput){
    
-    formList.innerHTML += `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenInput.valuePhoto}" alt="siames-cat"/><h3 class="card_title">${kittenInput.valueName.toUpperCase()}</h3><h4 class="card_race">${kittenInput.valueRace}</h4><p class="card_description">${kittenInput.valueDesc}</p></article></li>`;
+    formList.innerHTML += `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenInput.valuePhoto}" alt="siames-cat"/><h3 class="card_title">${kittenInput.valueName.toUpperCase()}</h3><h4 class="card_race">${renderRace(kittenInput.valueRace)}</h4><p class="card_description">${kittenInput.valueDesc}</p></article></li>`;
 };
+
+
 
 buttonAdd.addEventListener('click', addNewKitten);
 
@@ -152,11 +128,12 @@ function addNewKitten(event) {
       valueRace: inputRace.value,
     };
     //Comentar con Marina
-    // const kittenInput= kittenData_1;
-    // kittenInput.image=inputPhoto.value;
-    // kittenInput.name=inputName.value;
-    // kittenInput.desc=inputDesc.value;
-    // kittenInput.race=inputRace.value;
+    // const kittenInput = {
+    // image : inputPhoto.value,
+    // name : inputName.value,
+    // desc : inputDesc.value,
+    // race : inputRace.value,
+    // }
 
     if (kittenInput.valueDesc === '' || kittenInput.valuePhoto === '' || kittenInput.valueName === '') {
         labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo";
@@ -175,24 +152,6 @@ function inputClearForm(){
     inputRace.value = '';
     inputDesc.value = '';
 }
-
-function inputClearSearch(){
-
-}
-
-
-//buttonAdd.addEventListener('click', (event) =>{
-    //event.preventDefault();
-//     const valueDesc = inputDesc.value;
-//     const valuePhoto = inputPhoto.value;
-//     const valueName = inputName.value;
-
-//     if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-//         labelMessageError.innerHTML = "¡Uy! parece que has olvidado algo"
-//     } else {
-//         labelMessageError.innerHTML = "Todo ok"
-//     }
-// })
 
 const buttonCancel = document.querySelector('.js-btn-cancel');
 
