@@ -69,17 +69,17 @@ La solución del ejercicio completo se subirá al final del módulo, si en una s
 #### 2.6 Funciones II:
 
 - [x] 1. **FORMULARIO:** Cancelar formulario.
-- [ ] 2. **FILTRAR:** Filtrar por descripción.
-- [ ] 3. **LISTADO - Bonus:**: ¿Y si no hay raza?.
-- [ ] 4. **BONUS:** Funciones dentro de funciones.
+- [x] 2. **FILTRAR:** Filtrar por descripción.
+- [x] 3. **LISTADO - Bonus:**: ¿Y si no hay raza?.
+- [x] 4. **BONUS:** Funciones dentro de funciones.
 
 #### 2.7 Objetos
 
-- [ ] 1. **LISTADO:** Convertir cada gatito en un objeto
+- [x] 1. **LISTADO:** Convertir cada gatito en un objeto
 
 #### 2.8 Arrays
 
-- [ ] 1. **LISTADO:** Crear listado de gatitos I
+- [x] 1. **LISTADO:** Crear listado de gatitos I
 
 #### 2.9 Bucles
 
