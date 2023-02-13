@@ -45,26 +45,38 @@ const articleThree = document.querySelector('.js-article-3');
 const btnSearch = document.querySelector('.js-btn-search');
 
 //remove.classList.remove('remove');
-const filterKitten = (event) => {
+// const filterKitten = (event) => {
+//   event.preventDefault();
+//   formList.innerHTML = "";
+//   const descrSearchText = input_search_desc.value;
+//   if (kittenData_1.desc.includes(descrSearchText)) {
+//     // formList.innerHTML += kittenData_1;
+//     renderKittenSearch(kittenData_1);
+//     paragraph.innerHTML = `Tu gato es el 1`;}
+
+//   if (kittenData_2.desc.includes(descrSearchText)) {
+//     // formList.innerHTML += kittenData_2;
+//     renderKittenSearch(kittenData_2);
+//      paragraph.innerHTML = 'Tu gato es el 2';}
+
+//   if (kittenData_3.desc.includes(descrSearchText)) {
+//     // formList.innerHTML += kittenData_3;
+//     renderKittenSearch(kittenData_3);
+//     paragraph.innerHTML = 'Tu gato es el 3';
+//   }
+// };
+
+function filterKitten(event) {
   event.preventDefault();
-  formList.innerHTML = "";
   const descrSearchText = input_search_desc.value;
-  if (kittenData_1.desc.includes(descrSearchText)) {
-    // formList.innerHTML += kittenData_1;
-    renderKittenSearch(kittenData_1);
-    paragraph.innerHTML = `Tu gato es el 1`;}
-
-  if (kittenData_2.desc.includes(descrSearchText)) {
-    // formList.innerHTML += kittenData_2;
-    renderKittenSearch(kittenData_2);
-     paragraph.innerHTML = 'Tu gato es el 2';}
-
-  if (kittenData_3.desc.includes(descrSearchText)) {
-    // formList.innerHTML += kittenData_3;
-    renderKittenSearch(kittenData_3);
-    paragraph.innerHTML = 'Tu gato es el 3';
+  formList.innerHTML = '';
+  for (const kittenItem of kittenDataList) {
+    if (kittenItem.desc.includes(descrSearchText)) {
+      renderKittenSearch(kittenItem);
+    }
   }
-};
+}
+
 
 
 btnSearch.addEventListener('click',filterKitten );
@@ -111,7 +123,6 @@ const inputRace = document.querySelector('.js-input-race');
 const labelMessageError = document.querySelector('.js-label-error');
 
 function renderKittenForm(kittenInput){
-   
     formList.innerHTML += `<li class="card"><article class="js-article-3"><img    class="card_img"src="${kittenInput.valuePhoto}" alt="siames-cat"/><h3 class="card_title">${kittenInput.valueName.toUpperCase()}</h3><h4 class="card_race">${renderRace(kittenInput.valueRace)}</h4><p class="card_description">${kittenInput.valueDesc}</p></article></li>`;
 };
 
@@ -161,3 +172,20 @@ const cancelNewKitten = (event) =>{
     form.classList.add('collapsed');
 }
 buttonCancel.addEventListener('click',cancelNewKitten);
+
+
+// Lesson 2.9
+function renderKittenList(kittenDataList) {
+  formList.innerHTML = '';
+  for (const kitten of kittenDataList){
+    renderKittenSearch(kitten);
+  }
+}
+
+
+  //Completa el código:
+  //Vaciamos el innerHTML del <ul> de la página.
+  //Iteramos sobre el listado de gatitos
+  //Y por cada iteración pintamos un gatito.
+  //utilizando la función renderKitten(kittenItem)
+

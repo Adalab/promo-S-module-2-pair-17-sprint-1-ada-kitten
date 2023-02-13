@@ -83,8 +83,8 @@ La solución del ejercicio completo se subirá al final del módulo, si en una s
 
 #### 2.9 Bucles
 
-- [ ] 1. **LISTADO:** Crear listado de gatitos II
-- [ ] 2. **FILTRAR:**: Filtrar por descripción
+- [x] 1. **LISTADO:** Crear listado de gatitos II
+- [x] 2. **FILTRAR:**: Filtrar por descripción
 
 #### 2.11 Arrays II
 
